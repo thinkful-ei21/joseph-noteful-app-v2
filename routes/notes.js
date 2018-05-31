@@ -44,7 +44,7 @@ router.get('/:id', (req, res, next) => {
       if (id) {
         queryBuilder.where('id', id);
       } else {
-        res.sendStatus(404);
+        next();
       }
     })
     .orderBy('id')
